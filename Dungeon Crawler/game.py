@@ -46,8 +46,26 @@ def spawn_monster (monsters):
 def start_game():
     print("Starting Game...")
     player_name = input("Enter your name: ")
-    print(f"Welcome, {player_name}")
+    
+    player_class = select_job()
 
+    print(f"Welcome, {player_name} the {player_class}")
+
+def select_job():
+    print("Choose your class: ")
+    print("1. Paladin")
+    print("2. Ranger")
+
+    while True:
+        choice = input("Enter choice: ")
+
+        match choice:
+            case "1":
+                return "Paladin"
+            case "2":
+                return "Ranger"
+            case _:
+                return "Invalid input"
 
 while True: #main menu choice
 
